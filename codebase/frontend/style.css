@@ -1,0 +1,164 @@
+/*CSS for Main Page*/
+
+/*general setting*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope";
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(Manrope-VariableFont_wght.ttf);
+}
+
+/*main flex container settings*/
+.container-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-1 {
+  height: 100vh;
+}
+
+#sidebar {
+  width: 20vw;
+  background-color: #f9f9f9;
+  border-right: 1px solid #d3d3d3;
+}
+
+#main {
+  width: 80vw;
+  align-items: center;
+}
+
+/*sidebar flex settings*/
+.container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  padding-top: 2vh;
+  text-align: center;
+}
+
+#mainLogo {
+  width: 50px;
+  height: 50px;
+}
+
+#mainText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6956e5;
+}
+
+#homeButton,
+#manualButton,
+#autoButton {
+  width: 75%;
+  height: 4em;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  border-color: #6956e5;
+  color: #6956e5;
+  border: 2px solid;
+  align-content: center;
+  text-decoration: none;
+}
+
+#homeButton:active,
+#manualButton:active,
+#autoButton:active {
+  background-color: #6956e5;
+  color: white;
+}
+
+/*main area flex settings*/
+
+#mainHeader,
+#mainSubHeader {
+  margin-left: 25px;
+}
+
+#mainHeader {
+  padding-top: 20px;
+}
+
+#mainSubHeader {
+  font-weight: 400;
+  color: #828282;
+}
+
+.container-3 {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+  margin-top: 5%;
+}
+
+.item-3 {
+  flex-grow: 1;
+}
+
+#pidBox {
+  width: 25%;
+  height: 100%;
+  margin-left: 20px;
+  border: #d3d3d3 solid 1px;
+  border-radius: 15px;
+}
+
+#pidBoxTitle {
+  font-size: 35px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+
+#pidBoxParagraph {
+  font-size: 15px;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 50vh;
+}
+
+.item-4 {
+  width: 70%;
+  height: 50%;
+  border-radius: 15px;
+  text-align: center;
+  align-content: center;
+}
+
+#pInfo {
+  background-color: #fff0e6;
+}
+
+#iInfo {
+  background-color: #eceafe;
+}
+
+#dInfo {
+  background-color: #cccccc;
+}
+
+.bulletTitle {
+  font-size: 17px;
+}
+
+.bulletContent {
+  font-size: 12px;
+  font-weight: 300;
+}

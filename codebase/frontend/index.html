@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Welcome</title>
+  </head>
+  <body>
+    <div class="container-1">
+      <div class="item-1" id="sidebar">
+        <div class="container-2">
+          <div class="item-2">
+            <img src="pidTuning.png" alt="Main Logo" id="mainLogo" />
+          </div>
+          <div class="item-2" id="mainText">PID Tuner Training Module</div>
+          <a href="index.html" class="item-2" id="homeButton">Home</a>
+          <a href="manual.html" class="item-2" id="manualButton">Manual</a>
+          <a href="auto.html" class="item-2" id="autoButton">Auto</a>
+        </div>
+      </div>
+      <div class="item-1" id="main">
+        <h1 id="mainHeader">Welcome to the PID Tuner Training Module!</h1>
+        <h3 id="mainSubHeader">Hope you have a good day ahead.</h3>
+        <div class="container-3">
+          <div class="item-3" id="pidBox">
+            <h2 id="pidBoxTitle">PID in Feedback & Control System</h2>
+            <p id="pidBoxParagraph">
+              Without PID, the modern manufacturing and chemical industries,
+              which require precise temperature, flow, and pressure control,
+              could not exist in their current form.
+            </p>
+          </div>
+          <div class="item-3 container-4" id="bulletContainer">
+            <div class="item-4" id="pInfo">
+              <h1 class="bulletTitle">Proportional reacts to error size.</h1>
+              <h3 class="bulletContent">
+                The larger the tilt, the stronger the correction.
+              </h3>
+            </div>
+            <div class="item-4" id="iInfo">
+              <h1 class="bulletTitle">Integral fixes steady-state error.</h1>
+              <h3 class="bulletContent">
+                Integral is the "memory" of the controller
+              </h3>
+            </div>
+            <div class="item-4" id="dInfo">
+              <h1 class="bulletTitle">Derivative predicts the future.</h1>
+              <h3 class="bulletContent">Derivative is the system's brakes</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

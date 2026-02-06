@@ -1,0 +1,180 @@
+/*CSS for Manual Tuning*/
+
+/*general setting*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope";
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(Manrope-VariableFont_wght.ttf);
+}
+
+/*main flex container settings*/
+.container-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-1 {
+  height: 100vh;
+}
+
+#sidebar {
+  width: 20vw;
+  background-color: #f9f9f9;
+  border-right: 1px solid #d3d3d3;
+}
+
+#main {
+  width: 80vw;
+  align-items: center;
+}
+
+/*sidebar flex settings*/
+.container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  padding-top: 2vh;
+  text-align: center;
+}
+
+#mainLogo {
+  width: 50px;
+  height: 50px;
+}
+
+#mainText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6956e5;
+}
+
+#homeButton,
+#manualButton,
+#autoButton {
+  width: 75%;
+  height: 4em;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  background-color: #f9f9f9;
+  border-color: #6956e5;
+  color: #6956e5;
+  border: 2px solid;
+  align-content: center;
+  text-decoration: none;
+}
+
+#homeButton:active,
+#manualButton:active,
+#autoButton:active {
+  background-color: #6956e5;
+  color: white;
+}
+
+/*main area flex settings*/
+.container-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+#deviceName {
+  font-weight: 800;
+  margin-top: 25px;
+}
+
+#performanceGraph {
+  width: 80%;
+  height: 50%;
+  border: #000000 solid 2px;
+  border-radius: 10px;
+}
+
+.container-4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80vw;
+}
+
+.item-4 {
+  font-size: 12px;
+  text-align: center;
+  background-color: #d5d0f4;
+  width: 15vw;
+  border-radius: 12px;
+}
+
+.container-5 {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  justify-content: space-evenly;
+}
+
+.item-5 {
+  text-align: center;
+  font-size: 13px;
+  height: 13vh;
+  align-content: center;
+}
+
+#proportionalGain,
+#integralGain,
+#derivativeGain,
+#setAngle {
+  width: 12vw;
+  border-radius: 12px;
+}
+
+#proportionalGain {
+  background-color: #fee9e3;
+}
+
+#integralGain {
+  background-color: #aaa0f0;
+}
+
+#derivativeGain {
+  background-color: #fdc7f3;
+}
+
+#setAngle {
+  background-color: #6c98e4;
+}
+
+#proportionalGainValue,
+#integralGainValue,
+#derivativeGainValue,
+#setAngleValue {
+  width: 8vw;
+}
+
+#proportionalGainLabel,
+#integralGainLabel,
+#derivativeGainLabel,
+#setAngleLabel {
+  font-weight: 800;
+  font-size: 11px;
+}
+
+#sendDataButton {
+  width: 10vw;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: #61da71;
+  border: none;
+}
+
+#sendDataButton:active {
+  background-color: #f56161;
+}
