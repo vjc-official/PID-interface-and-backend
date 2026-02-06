@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,8 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "mqtt": "^5.15.0",
-    "mysql2": "^3.16.3"
+    "mysql2": "^3.16.3",
+    "pg": "^8.18.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
