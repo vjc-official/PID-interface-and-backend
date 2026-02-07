@@ -1,27 +1,30 @@
 const express = require("express");
-const { default: mqtt } = require("mqtt");
+const mqtt = require("mqtt");
 const path = require("path");
 const app = express();
+//server port
 const port = 3000;
 
 app.use(express.json());
 
-const mqttClient = mqtt.connect();
-const mqttTopic = "esp32/sensor";
+const client = mqtt.connect("mqtt://localhost:1883");
 
-mqttClient.on("connect", () => {
-  console.log("connected to MQTT broker");
-
-  mqttClient.subscribe(mqttTopic, (err) => {
-    if (!err) {
-      console.log(`listening for data on topic: ${mqttTopic}`);
-    }
-  });
+client.on("connect", () => {
+  console.log("Backend connected to MQTT server");
+  //subscribes the server to "performanceData" topic
+  client.subscribe("performanceData");
 });
 
-mqttClient.on("message", (topic, message) => {
-  const msgStr = message.toString();
-  console.log(`MQTT message received: ${msgStr}`);
+client.on("message", (topic, message) => {
+  const payload = message.toString(); //Step 1: Buffer (received data) -> convert to string
+
+  try {
+    const data = JSON.parse(payload);
+  } catch (error) {
+    console.error("Received message was not valid JSON");
+  }
+
+  console.log(data.riseTime);
 });
 
 //serve static files

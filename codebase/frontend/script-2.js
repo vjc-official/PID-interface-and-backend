@@ -18,6 +18,8 @@ const derivativeGainValue = document.getElementById("derivativeGainValue");
 const setAngleValue = document.getElementById("setAngleValue");
 const sendDataButton = document.getElementById("sendDataButton");
 
+function sendData() {}
+
 //initiates the sending of data from website to ESP32
 sendDataButton.addEventListener("click", sendData);
 
