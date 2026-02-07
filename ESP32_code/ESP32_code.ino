@@ -22,6 +22,12 @@ const int mqttPort = 1883;
 const char *publishTopic = "performanceData";
 const char *subscribeTopic = "commandData";
 
+WiFiClient espClient;
+PubSubClient client(espClient);
+unsigned long lastMsg = 0;
+char msg[50];
+int value = 0;
+
 // ===== PID PARAMETERS =====
 float Kp = 15.0;
 float Ki = 0.5;
@@ -32,7 +38,6 @@ float setpoint = 70.0;
 float integral = 0;
 float previous_error = 0;
 unsigned long timer;
-unsigned long lastMsg = 0;
 const int READ_CYCLE_TIME = 1000;
 
 // ===== ANALYTICS =====
@@ -48,15 +53,48 @@ float overshoot = 0;
 float steadyStateError = 0;
 unsigned long settleStart = 0;
 
+
+// CONNECT ESP32 TO COMMON WIFI NETWORK
 void initWiFi() {
   WiFi.mode(WIFI_STA);
-  Wifi.begin(ssid,password);
+  WiFi.begin(ssid,password);
   Serial.print("Connecting to WiFi...");
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
     delay(1000);
   }
   Serial.println(WiFi.localIP());
+}
+
+void callback(char* topic, byte* message, unsigned int length) {
+  Serial.print("Message arrived on topic: ");
+  Serial.print(topic);
+  Serial.print(". Message: ");
+  String messageTemp;
+
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)message[i]);
+    messageTemp += (char)message[i];
+  }
+}
+
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Attempt to connect
+    if (client.connect("pidPropeller")) {
+      Serial.println("connected");
+      // Subscribe
+      client.subscribe("commandData");
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
 }
 
 void setup() {
@@ -75,6 +113,10 @@ void setup() {
 
   timer = millis();
   Serial.println("Roll,Setpoint,RiseTime,Overshoot,SettlingTime,SteadyStateError");
+
+  initWiFi();
+  client.setServer(mqttBroker, mqttPort);
+  client.setCallback(callback);
 }
 
 void loop() {
