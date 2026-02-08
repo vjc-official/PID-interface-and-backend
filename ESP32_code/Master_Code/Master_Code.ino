@@ -5,9 +5,9 @@
 #include <math.h>
 
 // --- SETTINGS ---
-const char* ssid     = "Converge 4G (HUAWEI-2.4G-3Rhm)";
-const char* password = "Tan0ngM0KayTatay...";
-const char* mqtt_server = "192.168.100.38";
+const char* ssid     = "Converge 4G (HUAWEI-2.4G-3Rhm)"; // common ssid network 2.4GHz
+const char* password = "Tan0ngM0KayTatay..."; // password
+const char* mqtt_server = "192.168.100.38"; // ipconfig ng pc
 const int mqtt_port    = 1883;
 #define MPU_ADDR 0x68
 #define IN1 26
