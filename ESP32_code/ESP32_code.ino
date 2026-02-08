@@ -17,7 +17,7 @@ const int resolution = 8;
 // ===== WIFI & MQTT CONFIG =====
 const char *ssid = "GlobeAtHome_81223_2.4"; //wifi name of common network
 const char *password = "PWKatb2E"; //password of common network
-const char *mqttBroker = "192.168.254.113"; //change to IP of server device
+const char *mqttBroker = "192.168.254.118"; //change to IP of server device
 const int mqttPort = 1883; 
 const char *publishTopic = "performanceData";
 const char *subscribeTopic = "commandData";

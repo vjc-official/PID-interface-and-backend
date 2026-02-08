@@ -1,0 +1,21 @@
+{
+  "name": "pid-interface-and-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjc-official/PID-interface-and-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vjc-official/PID-interface-and-backend/issues"
+  },
+  "homepage": "https://github.com/vjc-official/PID-interface-and-backend#readme"
+}
