@@ -39,7 +39,12 @@ app.use(express.static("public")); // Serves your HTML file
 // Send commands from Frontend to ESP32
 app.post("/api/command", (req, res) => {
   const { kp, ki, kd, set } = req.body;
-  const payload = JSON.stringify({ kp, ki, kd, set });
+  const payload = JSON.stringify({
+    kp: kp || null,
+    ki: ki || null,
+    kd: kd || null,
+    set,
+  });
 
   // 1. Wipe the database table
   const clearQuery = "TRUNCATE TABLE performancedata"; // Use TRUNCATE for a fast, total wipe

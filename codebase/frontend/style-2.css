@@ -156,9 +156,9 @@ body {
   background-color: #6c98e4;
 }
 
-#proportionalGainValue,
-#integralGainValue,
-#derivativeGainValue,
+#currentKp,
+#currentKi,
+#currentKd,
 #setAngleValue {
   font-size: 12px;
   font-weight: 500;
