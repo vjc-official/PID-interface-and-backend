@@ -3,11 +3,11 @@
 #include <ArduinoJson.h>
 
 // Replace with your network credentials
-const char* ssid     = "GlobeAtHome_81223_2.4";
-const char* password = "PWkatb2E";
+const char* ssid     = "Converge 4G (HUAWEI-2.4G-3Rhm)";
+const char* password = "Tan0ngM0KayTatay...";
 
 // MQTT Broker settings
-const char* mqtt_server = "192.168.254.118"; // Replace with your Broker's Local IP
+const char* mqtt_server = "192.168.100.38"; // Replace with your Broker's Local IP
 const int mqtt_port    = 1883;            // Default MQTT port
 
 WiFiClient espClient;

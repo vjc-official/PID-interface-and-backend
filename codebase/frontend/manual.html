@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style-3.css" />
     <script src="script-3.js" defer></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Manual Tuning</title>
   </head>
   <body>
@@ -23,7 +25,9 @@
       <div class="item-1" id="main">
         <div class="container-3">
           <div class="item-3" id="deviceName">Device Name</div>
-          <div class="item-3" id="performanceGraph"></div>
+          <div class="item-3" id="performanceGraph">
+            <canvas id="pidChart"></canvas>
+          </div>
           <div class="item-3" id="performanceStats">
             <div class="container-4">
               <div class="item-4" id="riseTime">
